@@ -10,12 +10,12 @@
     <header>
         <h1>Login</h1>
     </header>
-        <form action="welcome.jsp" method="POST">
+        <form action="/mvc/login" method="POST">
                 <label for="name">Username:</label>
-                <input type="text" name="name" value=${name} required />
+                <input type="text" name="name" required value="${name}">
                 <label for="password">Password:</label>
-                <input type="password" name="password" value=${password} required />
-                <button type="submit" value="Submit Query">Submit</button>
+                <input type="password" name="password" required value="${password}">
+                <button type="submit" value="submit">Submit</button>
         </form>
         <p>${errorMessage}</p>
 </body>

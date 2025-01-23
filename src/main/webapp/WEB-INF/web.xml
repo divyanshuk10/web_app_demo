@@ -7,19 +7,24 @@
 
     <display-name>Spring Boot Servlet App</display-name>
     <welcome-file-list>
-        <welcome-file>loginServlet</welcome-file>
+        <welcome-file>loginServlet.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- Define your servlet -->
-<!--    <servlet>-->
-<!--        <servlet-name>loginServlet</servlet-name>-->
-<!--        <servlet-class>com.example.web_app_demo.LoginServlet</servlet-class>-->
-<!--    </servlet>-->
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/todo-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
-    <!-- Map your servlet to a URL pattern -->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>loginServlet</servlet-name>-->
-<!--        <url-pattern>/loginServlet</url-pattern>-->
-<!--    </servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/mvc/*</url-pattern>
+    </servlet-mapping>
 
 </web-app>
